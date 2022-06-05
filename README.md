@@ -26,3 +26,8 @@ symfony. En outre, il faut préficer par php les appels à bin/console :
 symfony php bin/console make:controller
 ```
 
+## installation database
+
+Pour communiquer avec la BDD il est nécessaire d'avoir un driver configuré.
+Pour cela, il faut décommenter le module dans le fichier php.ini : pdo_mysql.
+Après création du fichier .env.local, il faut configurer le DATABASE_URL avec la version de notre SGBDR
