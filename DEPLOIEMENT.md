@@ -16,3 +16,7 @@ Pour compléter cette note, suivre le tuto de [Jet Brains](https://www.jetbrains
 
 Reste à tester avec des commits, pour saisir les éventuelles manipulations à opérer.
 Il s'agit de voir si des pulls, ou des uploads sont nécessaires après un push, un pull sur le remote ou si tout est automatisé.
+
+## Modification du code en remote pour tester le déploiement lors d'un pull
+
+Ce teste consiste en une modification du présent fichier depuis la plateforme de Github pour vérifier si le déploiement se fait automatiquement ou non.
