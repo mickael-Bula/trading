@@ -19,4 +19,8 @@ Il s'agit de voir si des pulls, ou des uploads sont nécessaires après un push,
 
 ## Modification du code en remote pour tester le déploiement lors d'un pull
 
-Ce teste consiste en une modification du présent fichier depuis la plateforme de Github pour vérifier si le déploiement se fait automatiquement ou non.
+Ce test consiste en une modification du présent fichier depuis la plateforme de Github pour vérifier si le déploiement se fait automatiquement ou non.
+
+### Résultat
+
+Après un pull du dernier commit, les modifications se trouvent bien sur le code déployé. Inutile de lancer des commandes supplémentaires.
