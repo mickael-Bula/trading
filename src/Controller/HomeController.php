@@ -21,10 +21,12 @@ class HomeController extends AbstractController
         //         'Aucune entrée dans la base'
         //     );
         // }
+        $var = 'ma variable de test de xdebug';
 
         return $this->render("home.html.twig", [
             'title' => "page d'accueil",
             'message' => 'Welcome to your new controller!',
+            'test'  => $var,
             // 'lastDate' => $lastDate
         ]);
     }

@@ -62,3 +62,15 @@ Aucun redéploiement n'est à effectuer.
 J'ai également fait un merge de la branche de test dans `main`, et les modifications ont été intégrées et affichées sans redéploiement.
 
 Résultat, tout fonctionne de manière transparente.
+
+## Utilisation de xdebug dans wampserver
+
+J'ai réussi à configurer des points d'arrêt définis dans l'application sur `C:\` qui ont été touché au lancement de l'application depuis Wampserver.
+
+Pour cela, plusieurs étapes sont à réaliser :
+
+- ... TODO : documenter la partie configuration de xdebug dans phpstorm
+- la dernière est d'aller dans File > Settings > PHP > Servers : il faut configurer le serveur pour Wampserver (localhost avec le port 80) et cocher Use path mapping
+- le mappage doit faire correspondre `C:/Users/bulam/Documents/php/trading` avec `C:/wamp64/www/MyDeployedApp`
+
+Le point d'arrêt défini est alors atteint au rechargement de la page dans le navigateur.
