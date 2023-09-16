@@ -4,11 +4,11 @@ Cette note concerne le déploiement automatique du code en utilisant phpstorm.
 Le code d'origine est installé dans mon répertoire Utilisateur, tandis qu'une copie est mise dans le répertoire de Wampserver :
 
 ```
-origine : C:\Users\bulam\Documents\php
+origine : C:\Users\bulam\Documents\php\trading
 copie: C:\wamp64\www\MyDeployedApp
 ```
 
-L'appli se trouvant dans mon répertoire Utilisateur est lancée avec le serveur Symfony.
+L'appli se trouve dans mon répertoire Utilisateur et peut être lancée avec le serveur Symfony.
 J'utilise le localhost de Wampserver comme serveur distant ou déployé.
 Si n'importe quel répertoire ferait l'affaire, l'avantage est ici de pouvoir indistinctement lancer l'un des 2 serveurs pour voir les changements apparaître dans le navigateur.
 
@@ -17,11 +17,11 @@ NOTE : cette fiche suit le tutoriel du site de [JetBrains](https://www.jetbrains
 Pour configurer le déploiement automatique, dans le menu phpstorm : Tools | Deployment | Configuration
 Cliquer ensuite sur Add, et dans la fenêtre déclarer un nom pour le serveur (ici `MyRemoteServer`) et sélectionner son type (j'ai choisi `Local or mounted folder` puisque ce serveur est le localhost de Wampserver)
 Après avoir fait `OK`, une nouvelle fenêtre apparaît dans laquelle on précise le répertoire dans lequel le projet sera déversé par copie. Dans mon cas, c'est `C:\wamp64\www`.
-Ensuite, dans la même fenêtre, il s'agit de remplir l'onglet Mappings. Par défaut, Local Pat est prérempli avec le chemin du projet en cours, ce qui me convient parfaitement.
+Ensuite, dans la même fenêtre, il s'agit de remplir l'onglet Mappings. Par défaut, Local Path est prérempli avec le chemin du projet en cours, ce qui me convient parfaitement.
 Dans le champ suivant, Deployment path, il faut indiquer le répertoire dans lequel les fichiers seront téléversés (j'ai précisé MyDeployedApp). Puis on peut accepter la valeur par défaut pour le Web path (`\`).
 Une fois accepté ces changements, le serveur se trouve prêt à l'emploi.
 
-Pour s'assurer que le serveur est bien monté, sélectionner Tools | Deployment | Browse Remote Host dans le menu principal et la fenêtre Remote Host tool window doit apparaître sur la droite dans phpstorm.
+Pour s'assurer que le serveur est bien monté, il faut sélectionner Tools | Deployment | Browse Remote Host dans le menu principal et la fenêtre Remote Host tool window doit apparaître sur la droite dans phpstorm.
 
 ### Configurer un serveur par défaut pour bénéficier du déploiement automatique
 
@@ -40,3 +40,16 @@ Ce test consiste en une modification du présent fichier depuis la plateforme de
 ### Résultat
 
 Après un pull du dernier commit, les modifications se trouvent bien sur le code déployé. Inutile de lancer des commandes supplémentaires.
+
+### Vérification du déploiement des modifications
+
+Lorsque je modifie le code depuis le projet ouvert dans `C:\` (donc qui n'est pas sur Wampserver), je peux voir immédiatement, et sans relance du déploiement, que les modifications sont effectives. 
+Pour cela, il me suffit de rafraîchir le navigateur ouvert sur la page localhost/myDeployedApp/public depuis Wampserver.
+
+## Troubleshooting
+
+Il faut veiller à ce que le code ait été correctement déployé au moins une première fois (j'ai eu le cas avec un index.php vide sur le remote, ce qui n'affichait rien dans le navigateur...)
+Si des erreurs apparaissent en console lorsqu'on lance composer install, il faut également s'assurer que les composer.json, composer.lock et symfony.lock ont été déployés.
+Il faut aussi veiller au bon paramétrage de webpack.config.js si des assets sont compilés : le outputPath doit partir de la racine du projet qui est différent sur le remote (il part de www dans Wampserver).
+### Vérification de la mise à jour du remote lorsqu'on change de branche
+
