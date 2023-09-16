@@ -53,3 +53,12 @@ Si des erreurs apparaissent en console lorsqu'on lance composer install, il faut
 Il faut aussi veiller au bon paramétrage de webpack.config.js si des assets sont compilés : le outputPath doit partir de la racine du projet qui est différent sur le remote (il part de www dans Wampserver).
 ### Vérification de la mise à jour du remote lorsqu'on change de branche
 
+J'ai créé une branche de test sur laquelle j'ai apporté des modifications visibles sir la page d'accueil.
+
+Lorsque je change de branche après commit des modifications, celles-ci disparaissent en accord avec la branche courante, tandis qu'un retour sur la branche de test affiche correctement ce qui avait été modifié.
+
+Aucun redéploiement n'est à effectuer.
+
+J'ai également fait un merge de la branche de test dans `main`, et les modifications ont été intégrées et affichées sans redéploiement.
+
+Résultat, tout fonctionne de manière transparente.
