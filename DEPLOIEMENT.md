@@ -33,6 +33,17 @@ On peut changer le serveur par défaut depuis ce même espace, mais aussi depuis
 Reste à tester avec des commits, pour saisir les éventuelles manipulations à opérer.
 Il s'agit de voir si des pulls, ou des uploads sont nécessaires après un push, un pull sur le remote ou si tout est automatisé.
 
+## Apache Pack
+
+Lorsqu'on utilise un serveur apache comme c'est le cas avec Wampserver, il faut installer Apache pack afin d'activer la redirection des routes vers la page index.html.
+Sans cela, le profiler Symfony ne charge pas.
+
+```bash
+$ composer require symfony/apache-pack
+```
+
+Pour que le fichier joue son rôle, il faut veiller à le déployer sur le serveur.
+
 ## Modification du code en remote pour tester le déploiement lors d'un pull
 
 Ce test consiste en une modification du présent fichier depuis la plateforme de Github pour vérifier si le déploiement se fait automatiquement ou non.

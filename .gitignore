@@ -12,3 +12,5 @@
 .idea/*
 .idea/php.xml
 .idea/trading.iml
+
+.htaccess

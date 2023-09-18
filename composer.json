@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.12",
         "fabpot/goutte": "^4.0",
+        "symfony/apache-pack": "^1.0",
         "symfony/console": "*",
         "symfony/dotenv": "*",
         "symfony/flex": "^1.17|^2",
